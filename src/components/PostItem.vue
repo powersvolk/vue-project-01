@@ -6,9 +6,17 @@
             <div><strong>Описание:</strong> {{ post.body }}</div>
         </div>
         <div class="post_btns">
-           <my-button
-            @click="$emit('remove', post)"
-           >Удалить</my-button>
+            <my-button
+                @click="$router.push(`/posts/${post.id}`)"
+            >
+                Открить
+            </my-button>
+            <my-button
+                @click="$emit('remove', post)"
+                style="margin-left: 15px;"
+            >
+                Удалить
+            </my-button>
         </div>
     </div>
 </template>
